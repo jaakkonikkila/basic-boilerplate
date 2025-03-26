@@ -34,6 +34,8 @@ import Image from "next/image"
 import { ToastDemoButton } from "@/components/toastDemoButton"
 import { Carousel as AnimatedCarousel } from "@/components/ui/animatedCarousel"
 import { Compare } from "@/components/ui/compare"
+import { LetterFx } from "@/components/effects/letterFx"
+import { FlipWords } from "@/components/effects/flipWords"
 
 export default function Home() {
   const navItems = [
@@ -50,6 +52,8 @@ export default function Home() {
       link: "/contact",
     },
   ];
+
+  const words = ["better", "cute", "beautiful", "modern"];
 
   const SkeletonOne = () => {
     return (
@@ -277,7 +281,7 @@ export default function Home() {
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>Is it accessible?</AccordionTrigger>
-            <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
+            <AccordionContent></AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>Is it styled?</AccordionTrigger>
@@ -287,7 +291,15 @@ export default function Home() {
           </AccordionItem>
         </Accordion>
       </section>
-
+      <section>
+        <h2 className="text-2xl font-semibold mb-2">Animation</h2>
+        <LetterFx trigger="instant" charset={["1","0"]}> Yes. It comes with default styles that matches the other component</LetterFx>
+      <div>
+        Build
+        <FlipWords words={["Clean","Fast","Reliable"]} />
+        websites with Aceternity UI 
+    </div>
+      </section>
       <section>
         <h2 className="text-2xl font-semibold mb-2">Alert</h2>
         <Alert>
